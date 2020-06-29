@@ -11,6 +11,8 @@ for(let l = 0;l<loop;l++){
         break;
     }
 
+    showMaxIndex(matrix);
+
     const rote = calcRoteMatrix(matrix);
     const T_rote = math.transpose(rote);
 
