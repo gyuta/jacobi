@@ -65,5 +65,5 @@ for(let l = 0;l<loop;l++){
 
     matrix = math.multiply(math.multiply(T_rote, matrix), rote);
 
-    dump(matrix);
+    // dump(matrix);
 }
