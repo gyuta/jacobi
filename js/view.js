@@ -1,4 +1,4 @@
-const getHtmlOfMatrix = (matrix) => {
+const getHtmlOfMatrix = (matrix, loop) => {
     let text = "";
     matrix.forEach( (value, index) => {
         let q = ""
@@ -9,12 +9,12 @@ const getHtmlOfMatrix = (matrix) => {
         }
         text += String(value) + q;
     })
-    return MathJax.tex2chtml(" A = \\begin{array}{ccc} "+ text + " \\end{array} ").outerHTML
+    return MathJax.tex2chtml(` A_{${loop}} = \\begin{array}{ccc} ${text} \\end{array} `).outerHTML
 }
 
-const showMatrix = (matrix) => {
+const showMatrix = (matrix, loop) => {
     let div = document.createElement("div"); 
-    div.innerHTML = getHtmlOfMatrix(matrix);
+    div.innerHTML = getHtmlOfMatrix(matrix, loop);
     matrixs.appendChild(div);
 }
 

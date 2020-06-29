@@ -1,11 +1,11 @@
 
 let matrix = math.matrix([[3,0.01,0.1],[0.01,2,0.1],[0.1,0.1,1]]);
 
-const loop = 100;
+const max_loop = 5;
 const eps = 10**(-3);
-for(let l = 0;l<loop;l++){
+for(let l = 0;l<max_loop;l++){
 
-    showMatrix(matrix);
+    showMatrix(matrix, l);
 
     if ( getMaxValue(matrix) < eps){
         break;
