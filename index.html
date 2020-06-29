@@ -6,24 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>jacobi</title>
   <script src="./node_modules/mathjs/dist/math.js"></script>
+  <script src="./node_modules//hyperapp/dist/hyperapp.js"></script>
+
+  <script type="text/javascript">
+    window.MathJax = {
+      chtml: {
+        matchFontHeight: false
+      },
+      tex: {
+        inlineMath: [['$', '$']]
+      }
+    };
+  </script>
+
   <script src="./node_modules/mathjax/es5/tex-mml-chtml.js"></script>
+
 </head>
 <body>
-<div id="app">
-  {{ message }}
-</div>
 
-<script src="./node_modules/vue/dist/vue.js"></script>
-<script type="text/javascript">
-  var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
+<div id="matrixs"></div>
 
-})
-</script>
 <script src="./js/jacobi.js"></script>
 <script src="./js/view.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
