@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>jacobi</title>
+  <script src="./node_modules/mathjs/dist/math.js"></script>
 </head>
 <body>
 
@@ -12,15 +13,16 @@
   {{ message }}
 </div>
 
-<script src="./node_modules/vue/dist/vue.js">
-</script>
+<script src="./node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript">
   var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!'
   }
+
 })
 </script>
+<script src="./js/jacobi.js"></script>
 </body>
 </html>
