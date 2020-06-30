@@ -87,3 +87,15 @@ const change = () => {
 
 document.getElementById("start").addEventListener('click', view);
 document.getElementById("n").addEventListener('change', change);
+
+
+const a = 1.0/math.sqrt(2);
+const hoge = math.matrix([[a,-a,0],[a,a,0],[0,0,1]]);
+const hoget = math.transpose(hoge);
+const fuga = math.matrix([[2,-1,0],[-1,2,-1],[0,-1,2]]);
+dump(hoge);
+dump(hoget);
+let ans = math.multiply(hoget,fuga);
+dump(ans);
+let ans2 = math.multiply(ans, hoge);
+dump(ans2);
