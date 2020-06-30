@@ -14,7 +14,8 @@ const getMaxElmIndex = (matrix) => {
 }
 
 const calcRoteMatrix = (A) => {
-    let rote = math.identity(3);
+    const n = Number(document.getElementById("n").value);
+    let rote = math.identity(n);
 
     const max_index = getMaxElmIndex(A);
     const k = max_index[0];

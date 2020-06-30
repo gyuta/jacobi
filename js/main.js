@@ -1,7 +1,7 @@
 
 const calc = () => {
     const input = document.getElementById("input_matrix");
-    const n = 3
+    const n = Number(document.getElementById("n").value);
     const row = n;
     const column = n;
 
@@ -66,4 +66,24 @@ async function view() {
     MathJax.typeset();
 }
 
-document.getElementById("start").addEventListener('click', view)
+const change = () => {
+    const n = Number(document.getElementById("n").value);
+
+    const matrix = document.getElementById('input_matrix');
+    matrix.innerHTML = "";
+
+    for (let i=0;i<n;i++){
+        const row = document.createElement('div');
+        row.classList.add('row');
+        for(let j=0;j<n;j++){
+            const input = document.createElement('input');
+            input.setAttribute('type', 'number');
+            input.setAttribute('step', 'any');
+            row.appendChild(input);
+        }
+        matrix.appendChild(row);
+    }
+}
+
+document.getElementById("start").addEventListener('click', view);
+document.getElementById("n").addEventListener('change', change);

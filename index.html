@@ -28,6 +28,7 @@
   <div id="expl">
     <h1>jacobi法による固有値計算</h1>
     <p>loop数は30程度でも30秒程処理に時間がかかります</p>
+    <p>次元の操作時に入力値は全て消去されます</p>
     <p>行列要素のインデックスは0開始なことに注意してください。</p>
     <p>エッジケースはちゃんと検討していないのでどこかおかしいかもしれません。</p>
     <p>プログラム側で入力された行列が実対称行列であることを確認していません。</p>
@@ -57,6 +58,7 @@
       </div>
     </div>
     <div id="value">
+      <div> 次元 = <input id="n" type="number" name="n" value=3></div>
       <div>eps = <input id="eps" type="number" name="eps" step="any" value=0.001></div>
       <div>loop = <input id="loop" type="number" name="loop" value=5></div>
     </div>

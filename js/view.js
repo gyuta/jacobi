@@ -1,10 +1,11 @@
 const getHtmlOfMatrix = (matrix, loop, name) => {
+    const n = Number(document.getElementById("n").value);
     let text = "";
     matrix.forEach( (value, index) => {
         let q = ""
-        if (index[1] !== 2) {
+        if (index[1] !== n-1) {
             q = " &";
-        } else if (index[0] !== 2) {
+        } else if (index[0] !== n-1) {
             q = " \\\\";
         }
         text += String(value) + q;
