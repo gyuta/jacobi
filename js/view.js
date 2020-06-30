@@ -35,13 +35,19 @@ const showFomula = (loop) => {
 
 const showContinue = (max, eps) => {
     let div = document.createElement("div"); 
-    div.innerHTML = MathJax.tex2chtml(`\\max_{i \\neq j} |a_{ij}| = ${max} であり eps = ${eps} よりも大きいため計算を続行します`).outerHTML;
+    div.innerHTML = MathJax.tex2chtml(`\\max_{i \\neq j} |a_{ij}| = ${max} であり eps = ${eps} よりも大きいため計算を続行します。`).outerHTML;
     matrixs.appendChild(div);
 }
 
 const showBreak = (max, eps) => {
     let div = document.createElement("div"); 
-    div.innerHTML = MathJax.tex2chtml(`\\max_{i \\neq j} |a_{ij}| = ${max} であり eps = ${eps} を下回ったので終了します`).outerHTML;
+    div.innerHTML = MathJax.tex2chtml(`\\max_{i \\neq j} |a_{ij}| = ${max} であり eps = ${eps} を下回ったので終了します。`).outerHTML;
+    matrixs.appendChild(div);
+}
+
+const showMsg = (msg) => {
+    let div = document.createElement("div"); 
+    div.innerHTML = MathJax.tex2chtml(msg).outerHTML;
     matrixs.appendChild(div);
 }
 

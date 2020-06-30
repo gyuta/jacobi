@@ -1,8 +1,9 @@
 
 const calc = () => {
     const input = document.getElementById("input_matrix");
-    const row = 3;
-    const column = 3;
+    const n = 3
+    const row = n;
+    const column = n;
 
     let arr = [];
 
@@ -19,6 +20,9 @@ const calc = () => {
 
     const max_loop = document.getElementById('loop').value;
     const eps = document.getElementById('eps').value;
+    let flg = false;
+    let P = math.identity(n);
+
     for(let l = 0;l<max_loop;l++){
 
         showMatrix(matrix, l);
@@ -28,6 +32,7 @@ const calc = () => {
             showContinue(max, eps);
         } else {
             showBreak(max, eps);
+            flg = true;
             break;
         }
 
@@ -40,7 +45,14 @@ const calc = () => {
 
         showFomula(l);
         matrix = math.multiply(math.multiply(T_rote, matrix), rote);
+        P = math.multiply(P, rote);
     }
+
+    if (!flg) {
+        showMsg('最大ループに到達したので終了します。');
+    }
+
+    showMatrix(P, " ", "P = P_0P_1P_2...")
 
 }
 
