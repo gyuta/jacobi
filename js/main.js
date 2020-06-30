@@ -1,26 +1,47 @@
 
-let matrix = math.matrix([[3,0.01,0.1],[0.01,2,0.1],[0.1,0.1,1]]);
+const calc = () => {
+    const input = document.getElementById("input_matrix");
+    const row = 3;
+    const column = 3;
 
-const max_loop = 5;
-const eps = 10**(-2);
-for(let l = 0;l<max_loop;l++){
+    let arr = [];
 
-    showMatrix(matrix, l);
-
-    const max = getMaxValue(matrix);
-    if ( max > eps){
-        showContinue(max, eps);
-    } else {
-        showBreak(max, eps);
+    for(let i=0;i<row;i++){
+        const tmp = input.children[i];
+        let row_arr = [];
+        for(let j=0;j<column;j++){
+            row_arr.push(tmp.children[j].value)
+        }
+        arr.push(row_arr)
     }
 
-    showMaxIndex(matrix);
+    let matrix = math.matrix(arr);
 
-    const rote = calcRoteMatrix(matrix);
-    const T_rote = math.transpose(rote);
+    const max_loop = document.getElementById('loop').value;
+    const eps = document.getElementById('eps').value;
+    for(let l = 0;l<max_loop;l++){
 
-    showMatrix(rote, l, "P");
+        showMatrix(matrix, l);
 
-    showFomula(l);
-    matrix = math.multiply(math.multiply(T_rote, matrix), rote);
+        const max = getMaxValue(matrix);
+        if ( max > eps){
+            showContinue(max, eps);
+        } else {
+            showBreak(max, eps);
+        }
+
+        showMaxIndex(matrix);
+
+        const rote = calcRoteMatrix(matrix);
+        const T_rote = math.transpose(rote);
+
+        showMatrix(rote, l, "P");
+
+        showFomula(l);
+        matrix = math.multiply(math.multiply(T_rote, matrix), rote);
 }
+
+}
+
+// document.getElementById("start").addEventListener('click', calc());
+// calc();
