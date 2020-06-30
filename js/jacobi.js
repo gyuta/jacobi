@@ -3,7 +3,7 @@ const getMaxElmIndex = (matrix) => {
     let max_index = [0,1];
     matrix.forEach( (value, index) => {
         if (index[0] !== index[1]) {
-            if ( max < value ) {
+            if ( math.abs(max) < math.abs(value) ) {
                 max = value;
                 max_index = index;
             }

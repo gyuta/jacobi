@@ -23,11 +23,12 @@ const calc = () => {
 
         showMatrix(matrix, l);
 
-        const max = getMaxValue(matrix);
+        const max = math.abs(getMaxValue(matrix));
         if ( max > eps){
             showContinue(max, eps);
         } else {
             showBreak(max, eps);
+            break;
         }
 
         showMaxIndex(matrix);
