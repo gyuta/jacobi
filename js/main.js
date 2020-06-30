@@ -43,7 +43,12 @@ const calc = () => {
 
 }
 
+const clear = () => {
+    document.getElementById("matrixs").innerHTML = "";
+}
+
 async function view() {
+    await clear();
     await calc();
     MathJax.typeset();
 }

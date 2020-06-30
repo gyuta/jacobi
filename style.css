@@ -1,6 +1,6 @@
 #matrixs {
     height: 70vh;
-    background-color: gainsboro;
+    background-color:rgb(255, 253, 253);
     overflow-y: scroll;
 }
 
@@ -11,12 +11,14 @@
 }
 
 #expl {
-    width: 30%;
+    width: 40%;
     overflow: scroll;
 }
 
 #input {
     overflow: scroll;
+    padding: 30px 20px 10px;
+    background-color: lightcyan;
 }
 
 .row {
