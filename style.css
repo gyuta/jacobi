@@ -1,0 +1,24 @@
+#matrixs {
+    height: 70vh;
+    background-color: gainsboro;
+    overflow-y: scroll;
+}
+
+#top {
+    height: 30vh;
+    background-color: azure;
+    display: flex;
+}
+
+#expl {
+    width: 30%;
+    overflow: scroll;
+}
+
+#input {
+    overflow: scroll;
+}
+
+.row {
+    white-space: nowrap;
+}

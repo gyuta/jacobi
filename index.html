@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
   <title>jacobi</title>
   <script src="./node_modules/mathjs/dist/math.js"></script>
 
@@ -22,6 +23,47 @@
 
 </head>
 <body>
+
+<div id="top">
+  <div id="expl">
+    <h1>jacobi法による固有値計算</h1>
+    <p>行列要素のインデックスは0開始なことに注意してください。</p>
+    <p>プログラム側で入力された行列が実対称行列であることを確認していません。</p>
+    <p>計算方法などは<a>qiita</a>や<a>github</a>を参照してください。</p>
+    <p>使用ライブラリ</p>
+    <ul>
+      <li>mathjax</li>
+      <li>mathjs</li>
+    </ul>
+  </div>
+  <div id="input">
+    <div id="input_matrix">
+      <div class="row">
+        <input type="number" name="A00" step="any" value=3>
+        <input type="number" name="A01" step="any" value=0.01>
+        <input type="number" name="A02" step="any" value=0.1>
+      </div>
+      <div class="row">
+        <input type="number" name="A10" step="any" value=0.01>
+        <input type="number" name="A11" step="any" value=2>
+        <input type="number" name="A12" step="any" value=0.1>
+      </div>
+      <div class="row">
+        <input type="number" name="A20" step="any" value=0.1>
+        <input type="number" name="A21" step="any" value=0.1>
+        <input type="number" name="A22" step="any" value=1>
+      </div>
+    </div>
+    <div id="value">
+      <div id="eps">eps = <input type="number" name="eps" step="any" value=0.001></div>
+      <div id="loop">loop = <input type="number" name="loop" value=30></div>
+    </div>
+    <div id=buttons>
+      <button id="start">実行</button>
+    </div>
+    <p>epsは終了条件、loopは最大ループ数を表します。</p>
+  </div>
+</div>
 
 <div id="matrixs"></div>
 
