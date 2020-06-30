@@ -25,9 +25,16 @@ const calcRoteMatrix = (A) => {
     const a_mm = A.subset(math.index(m,m));
     const a_kk = A.subset(math.index(k,k));
 
-    const cos2phi = math.abs(a_kk - a_mm)/(math.sqrt(4*a_km**2 + (a_kk - a_mm)**2));
-    const cosphi = math.sqrt((1+cos2phi)/2.0);
-    const sinphi = math.sign(a_km*(a_kk - a_mm))*math.sqrt((1-cos2phi)/2.0);
+    let cosphi;
+    let sinphi;
+    if(a_mm !== a_kk) {
+        const cos2phi = math.abs(a_kk - a_mm)/(math.sqrt(4*a_km**2 + (a_kk - a_mm)**2));
+        cosphi = math.sqrt((1+cos2phi)/2.0);
+        sinphi = math.sign(a_km*(a_kk - a_mm))*math.sqrt((1-cos2phi)/2.0);
+    } else {
+        cosphi = 1.0/math.sqrt(2);
+        sinphi = 1.0/math.sqrt(2);
+    }
 
     // console.log(cos2phi);
     // console.log(cosphi);
