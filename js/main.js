@@ -39,9 +39,13 @@ const calc = () => {
 
         showFomula(l);
         matrix = math.multiply(math.multiply(T_rote, matrix), rote);
-}
+    }
 
 }
 
-// document.getElementById("start").addEventListener('click', calc());
-// calc();
+async function view() {
+    await calc();
+    MathJax.typeset();
+}
+
+document.getElementById("start").addEventListener('click', view)
